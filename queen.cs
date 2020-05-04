@@ -4,26 +4,11 @@ class Queen
 {
   static void Main()
   {
-    // Console.WriteLine("Enter the Queen's X position");
-    // string xPosQueen = Console.ReadLine();
-    // int calcXQueen = int.Parse(xPosQueen);
-
-    // Console.WriteLine("Enter the Queen's y position");
-    // string yPosQueen = Console.ReadLine();
-    // int calcYQueen = int.Parse(yPosQueen);
-
-    // Console.WriteLine("Enter the other chess piece X position");
-    // string xPosOther = Console.ReadLine();
-    // int calcXPosOther = int.Parse(xPosOther);
-    
-    // Console.WriteLine("Enter the other chess piece Y position");
-    // string yPosOther = Console.ReadLine();
-    // int calcYPosOther = int.Parse(yPosOther);
-
-    QueenCordinates("queen");
-    QueenCordinates("pawn");
+    Cordinates("queen");
+    Cordinates("pawn");
+    Attack("1", "3", "1", "5");
   }
-  static void QueenCordinates(string piece)
+  static void Cordinates(string piece)
   {
     Console.WriteLine("What is the x position of " + piece  + "?");
     string yourXCord = Console.ReadLine();
@@ -31,12 +16,15 @@ class Queen
     string yourYCord = Console.ReadLine();
     Console.WriteLine("Your " + piece + " x pos is " + yourXCord + " & your " + piece + " y pos is " + yourYCord + ".");
   }
+  static void Attack(string xCordQ, string yCordQ, string xCordO, string yCordO)
+  {
+    if (xCordQ == xCordO || yCordQ == yCordO) 
+    {
+      Console.WriteLine("The Queen can attack.");
+    }
+    else
+    {
+      Console.WriteLine("The Queen cannot attack");
+    }
+  }
 }
-
-
-
-
-// if xPosQueen == xPosOther || yPosQueen == yPosOther
-// {
-//   else
-// }
